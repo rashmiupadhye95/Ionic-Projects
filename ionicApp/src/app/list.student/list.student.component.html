@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Students
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- List of Input Items -->
+<ion-list *ngFor="let s of students">
+	<ion-item>
+    <ion-label>Roll No: {{s.rollno}}</ion-label>
+    <ion-button color="primary" (click)="editStudent(s)"><ion-icon name="create" ></ion-icon></ion-button>
+    <ion-button color="danger" (click)="deleteStudent(s)"><ion-icon name="trash" ></ion-icon></ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name: {{s.firstName}} {{s.lastName}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>DOB: {{s.dob}} &nbsp; | &nbsp;Class: {{s.class}}</ion-label>    
+  </ion-item>
+  <ion-item>
+    <ion-label>Subject: {{s.subject}}&nbsp; | &nbsp;Teacher: {{s.teacher}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Address: {{s.address}}</ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>
